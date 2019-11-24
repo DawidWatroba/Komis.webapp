@@ -20,4 +20,9 @@ public class HelloServlet extends HttpServlet {
         pw.println("<H3>Hello Komisśćźż!</H3>");
         pw.println("</BODY></HTML>");
     }
+
+    @Override
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        super.doGet(req, resp);
+    }
 }

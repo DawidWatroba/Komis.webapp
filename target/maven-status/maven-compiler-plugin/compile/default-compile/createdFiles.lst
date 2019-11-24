@@ -1,1 +1,3 @@
 pl/dawid/web/HelloServlet.class
+pl/dawid/web/RedirectServlet.class
+pl/dawid/web/ControllerServlet.class

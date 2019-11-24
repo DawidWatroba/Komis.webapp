@@ -1,0 +1,5 @@
+127.0.0.1 - - [24/Nov/2019:12:00:13 +0100] "GET /Komis/hello HTTP/1.1" 200 85 http-bio-8080-exec-1 28
+127.0.0.1 - - [24/Nov/2019:12:00:31 +0100] "GET /Komis/hello HTTP/1.1" 200 85 http-bio-8080-exec-1 30
+127.0.0.1 - - [24/Nov/2019:12:02:16 +0100] "GET /Komis/hello HTTP/1.1" 200 121 http-bio-8080-exec-1 28
+127.0.0.1 - - [24/Nov/2019:12:06:21 +0100] "GET /Web00/helloUser HTTP/1.1" 404 - http-bio-8080-exec-1 0
+127.0.0.1 - - [24/Nov/2019:12:06:32 +0100] "GET /Komis/hello HTTP/1.1" 200 146 http-bio-8080-exec-2 18

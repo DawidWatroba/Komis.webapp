@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rejestracja użytkownika</title>
+</head>
+<body>
+<form action="add_user" method="post" >
+    Imie      : <input type="text" name="name"><br>
+    Nazwisko: <input type="text" name="surname"><br>
+    Wiek: <select name="age">
+    <option value="18">18</option>
+    <option value="20">20</option>
+    <option value="30">30</option>
+    <option value="40">40</option>
+</select><br>
+    Region  : <select name = "region">
+    <option>Polska</option>
+    <option>Niemcy</option>
+</select><br>
+    Płeć   :<input type="radio" name="sex" value="MALE">mezczyzna<br>
+            <input type="radio" name="sex" value="FEMALE">kobieta<br>
+    <input type="submit" value="Utwórz uzytkownika">
+</form>
+</body>
+</html>

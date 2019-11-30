@@ -19,9 +19,10 @@ public class ControllerServlet extends HttpServlet {
         if(name!=null){
             pw.println("<H3><font color=\"red\">"+name+" witaj w Komisie!</font></H3>");
         }else{
-            pw.println("<H3><font color=\"red\">Witaj użytkowniku Komisu!</font></H3>");
+            pw.println("<H3><font color=\"red\">Witaj uzytkowniku Komisu!</font></H3>");
         }
         pw.println("</BODY></HTML>");
-        pw.println("<a href=\"makeForm.html\">Link do wyboru marki<?a>");
+        pw.println("<a href=\"makeForm.html\">Link do wyboru marki<?a><br><br>");
+        pw.println("<a href=\"userForm.html\">Rejestracja klienta<?a><br><br>");
     }
 }

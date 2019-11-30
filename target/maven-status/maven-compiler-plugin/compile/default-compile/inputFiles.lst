@@ -1,3 +1,7 @@
-/home/student/IdeaProjects/Komis/src/main/java/pl/dawid/web/ControllerServlet.java
-/home/student/IdeaProjects/Komis/src/main/java/pl/dawid/web/RedirectServlet.java
-/home/student/IdeaProjects/Komis/src/main/java/pl/dawid/web/HelloServlet.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/Client.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/ClientDataDAO.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/ClientDataDAOImpl.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/HelloServlet.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/RedirectServlet.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/SaveClientDataServlet.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/ControllerServlet.java

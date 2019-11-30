@@ -17,6 +17,10 @@
     <servlet-name>process</servlet-name>
     <servlet-class>pl.dawid.web.RedirectServlet</servlet-class>
   </servlet>
+  <servlet>
+    <servlet-name>add_user</servlet-name>
+    <servlet-class>pl.dawid.web.SaveClientDataServlet</servlet-class>
+  </servlet>
 
   <servlet-mapping>
     <servlet-name>hello</servlet-name>
@@ -30,9 +34,25 @@
     <servlet-name>process</servlet-name>
     <url-pattern>/process</url-pattern>
   </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>add_user</servlet-name>
+    <url-pattern>/add_user</url-pattern>
+  </servlet-mapping>
+
+  <resource-ref>
+    <description>DB Connection</description>
+    <res-ref-name>jdbc:komis</res-ref-name>
+    <res-type>javax.sql.DataSource</res-type>
+    <res-auth>Container</res-auth>
+  </resource-ref>
 
   <welcome-file-list>
     <welcome-file>hello2</welcome-file>
   </welcome-file-list>
+
+  <context-param>
+    <param-name>dataSource</param-name>
+    <param-value>jdbc:komis</param-value>
+  </context-param>
 
 </web-app>

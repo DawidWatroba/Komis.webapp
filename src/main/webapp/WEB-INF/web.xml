@@ -26,10 +26,7 @@
     <servlet-name>add_user</servlet-name>
     <servlet-class>pl.dawid.web.SaveClientDataServlet</servlet-class>
   </servlet>
-  <servlet>
-    <servlet-name>read</servlet-name>
-    <servlet-class>pl.dawid.web.ReadDatabaseServlet</servlet-class>
-  </servlet>
+
   <servlet>
     <servlet-name>read_users</servlet-name>
     <servlet-class>pl.dawid.web.ReadClientDataServlet</servlet-class>
@@ -51,10 +48,7 @@
     <servlet-name>add_user</servlet-name>
     <url-pattern>/add_user</url-pattern>
   </servlet-mapping>
-  <servlet-mapping>
-    <servlet-name>read</servlet-name>
-    <url-pattern>/read</url-pattern>
-  </servlet-mapping>
+
   <servlet-mapping>
     <servlet-name>read_users</servlet-name>
     <url-pattern>/read_users</url-pattern>

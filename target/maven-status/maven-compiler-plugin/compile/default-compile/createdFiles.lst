@@ -1,7 +1,9 @@
 pl/dawid/web/HelloServlet.class
 pl/dawid/web/ControllerServlet.class
 pl/dawid/web/ClientDataDAOImpl.class
+pl/dawid/web/ReadClientDataServlet.class
 pl/dawid/web/ClientDataDAO.class
 pl/dawid/web/Client.class
 pl/dawid/web/RedirectServlet.class
 pl/dawid/web/SaveClientDataServlet.class
+pl/dawid/web/ReadDatabaseServlet.class

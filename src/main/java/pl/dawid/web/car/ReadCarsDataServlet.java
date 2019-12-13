@@ -1,8 +1,11 @@
-package pl.dawid.web;
+package pl.dawid.web.car;
+
+import pl.dawid.web.client.Client;
+import pl.dawid.web.client.ClientDataDAO;
+import pl.dawid.web.client.ClientDataDAOImpl;
 
 import javax.naming.Context;
 import javax.naming.InitialContext;
-import javax.naming.NamingException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -12,7 +15,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 
-public class ReadClientDataServlet extends HttpServlet {
+public class ReadCarsDataServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         PrintWriter pw = resp.getWriter();
@@ -20,8 +23,8 @@ public class ReadClientDataServlet extends HttpServlet {
             InitialContext initCtx = new InitialContext();
             Context context = (Context) initCtx.lookup("java:comp/env");
             DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
-            ClientDataDAO dao = new ClientDataDAOImpl();
-            List clients = dao.readClientsData(ds);
+            CarDataDAOImpl dao = new CarDataDAOImpl();
+            List cars = dao.readCarsData(ds);
             pw.println("<html lang=\"en\">\n" +
                     "<head>\n" +
                     "    <meta charset=\"UTF-8\">\n" +
@@ -29,23 +32,20 @@ public class ReadClientDataServlet extends HttpServlet {
                     "</head>\n" +
                     "<body>\n" +
                     "<table>");
-            for (Object o : clients) {
-                Client c = (Client)o;
+            for (Object o : cars) {
+                Car c = (Car)o;
                 pw.print("<tr>");
                 pw.print("<td>");
-                pw.println(c.getName());
+                pw.println(c.getMake());
                 pw.println("</td>");
                 pw.print("<td>");
-                pw.println(c.getSurname());
+                pw.println(c.getModel());
                 pw.println("</td>");
                 pw.print("<td>");
-                pw.println(c.getAge());
+                pw.println(c.getProductionYear());
                 pw.println("</td>");
                 pw.print("<td>");
-                pw.println(c.getRegion());
-                pw.println("</td>");
-                pw.print("<td>");
-                pw.println(c.getSex());
+                pw.println(c.getColor());
                 pw.println("</td>");
                 pw.println("</tr>");
             }

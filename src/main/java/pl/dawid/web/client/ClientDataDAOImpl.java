@@ -1,4 +1,4 @@
-package pl.dawid.web;
+package pl.dawid.web.client;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -6,9 +6,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.naming.Context;
-import javax.naming.InitialContext;
-import javax.naming.Name;
 import javax.sql.DataSource;
 
 public class ClientDataDAOImpl implements ClientDataDAO {

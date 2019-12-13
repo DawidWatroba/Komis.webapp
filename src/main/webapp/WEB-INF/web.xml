@@ -24,12 +24,21 @@
   </servlet>
   <servlet>
     <servlet-name>add_user</servlet-name>
-    <servlet-class>pl.dawid.web.SaveClientDataServlet</servlet-class>
+    <servlet-class>pl.dawid.web.client.SaveClientDataServlet</servlet-class>
   </servlet>
 
   <servlet>
     <servlet-name>read_users</servlet-name>
-    <servlet-class>pl.dawid.web.ReadClientDataServlet</servlet-class>
+    <servlet-class>pl.dawid.web.client.ReadClientDataServlet</servlet-class>
+  </servlet>
+
+  <servlet>
+    <servlet-name>add_car</servlet-name>
+    <servlet-class>pl.dawid.web.car.SaveCarsDataServlet</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>read_cars</servlet-name>
+    <servlet-class>pl.dawid.web.car.ReadCarsDataServlet</servlet-class>
   </servlet>
 
   <servlet-mapping>
@@ -52,6 +61,14 @@
   <servlet-mapping>
     <servlet-name>read_users</servlet-name>
     <url-pattern>/read_users</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>add_car</servlet-name>
+    <url-pattern>/add_car</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>read_cars</servlet-name>
+    <url-pattern>/read_cars</url-pattern>
   </servlet-mapping>
 
   <welcome-file-list>

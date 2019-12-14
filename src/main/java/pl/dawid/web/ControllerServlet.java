@@ -1,5 +1,7 @@
 package pl.dawid.web;
 
+import pl.dawid.web.listeners.SessionCounter;
+
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -9,7 +11,7 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 
-@WebServlet
+@WebServlet(urlPatterns = "/Komis")
 public class ControllerServlet extends HttpServlet {
 
 
@@ -30,7 +32,7 @@ public class ControllerServlet extends HttpServlet {
         pw.println("<a href=\"userForm.html\">Rejestracja klienta</a><br><br>");
         pw.println("<a href=\"carForm.html\">Dodaj samochod do bazy</a><br><br>");
         pw.println("<br>");
-        pw.println("<h5>Liczba aktywnych uzytkownikow: "+SessionCounter.getCounter()+"<br><br>");
+        pw.println("<h5>Liczba aktywnych uzytkownikow: "+ SessionCounter.getCounter()+"<br><br>");
         Object counter = getServletContext().getAttribute("savedClientsCounter");
         if(counter == null) {
             pw.println("Nie dodano uzytkownikow");

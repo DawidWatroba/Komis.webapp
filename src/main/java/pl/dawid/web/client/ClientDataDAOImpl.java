@@ -25,7 +25,7 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 	        pstmt.setString(3, cl.getSurname());
 	        pstmt.setString(4, cl.getRegion());
 	        pstmt.setInt(5, cl.getAge());
-	        pstmt.setInt(6,m );
+	        pstmt.setInt(6, m );
 	        
 	        pstmt.executeUpdate();
 	        pstmt.close();

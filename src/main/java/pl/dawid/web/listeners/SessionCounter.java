@@ -1,4 +1,4 @@
-package pl.dawid.web;
+package pl.dawid.web.listeners;
 
 import javax.servlet.annotation.WebListener;
 import javax.servlet.http.HttpSessionEvent;

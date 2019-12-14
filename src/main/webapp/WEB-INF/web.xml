@@ -10,6 +10,13 @@
     <param-value>jdbc:komis</param-value>
   </context-param>
 
+  <listener>
+    <listener-class>pl.dawid.web.SessionCounter</listener-class>
+  </listener>
+  <listener>
+    <listener-class>pl.dawid.web.SavedClientListener</listener-class>
+  </listener>
+
   <servlet>
     <servlet-name>hello</servlet-name>
     <servlet-class>pl.dawid.web.HelloServlet</servlet-class>

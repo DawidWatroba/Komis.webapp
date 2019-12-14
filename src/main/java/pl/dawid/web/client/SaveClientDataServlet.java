@@ -11,7 +11,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 
 public class SaveClientDataServlet extends HttpServlet {
-    //Client client = new Client();
+    Client client = new Client();
 
     @Override
     protected void doPost(HttpServletRequest req,
@@ -27,10 +27,11 @@ public class SaveClientDataServlet extends HttpServlet {
         try {
             InitialContext initCtx = new InitialContext();
             Context context = (Context) initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
+            DataSource ds = (DataSource) context.lookup(getServletContext()
+                    .getInitParameter("dataSource"));
             dao.saveClientData(client, ds);
             //podpunkt g :
-            //req.setAttribute("bla bla", client);
+            req.setAttribute("bla bla", client);
         } catch (Exception e) {
             e.printStackTrace();
         }

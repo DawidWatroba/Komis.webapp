@@ -13,5 +13,9 @@ pl/dawid/web/client/ClientDataDAOImpl.class
 pl/dawid/web/car/Car.class
 pl/dawid/web/listeners/SavedClientListener.class
 pl/dawid/web/car/SaveCarsDataServlet.class
+pl/dawid/web/car2/SaveCarInfoServlet.class
 pl/dawid/web/client/Client.class
+pl/dawid/web/car2/CarInfoDAO.class
+pl/dawid/web/car2/CarBean.class
 pl/dawid/web/client/DeleteClientServlet.class
+pl/dawid/web/car2/CarInfoDAOImpl.class

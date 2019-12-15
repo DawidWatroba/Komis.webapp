@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
-@WebServlet(urlPatterns = "/add_car")
+//@WebServlet(urlPatterns = "/add_car")
 public class SaveCarsDataServlet extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest req,

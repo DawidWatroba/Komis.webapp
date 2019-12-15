@@ -4,6 +4,7 @@ pl/dawid/web/client/ReadClientDataServlet.class
 pl/dawid/web/ControllerServlet.class
 pl/dawid/web/client/ClientDataDAO.class
 pl/dawid/web/listeners/SessionCounter.class
+pl/dawid/web/client/DeleteClientPrepServlet.class
 pl/dawid/web/RedirectServlet.class
 pl/dawid/web/car/CarDataDAO.class
 pl/dawid/web/client/SaveClientDataServlet.class
@@ -13,3 +14,4 @@ pl/dawid/web/car/Car.class
 pl/dawid/web/listeners/SavedClientListener.class
 pl/dawid/web/car/SaveCarsDataServlet.class
 pl/dawid/web/client/Client.class
+pl/dawid/web/client/DeleteClientServlet.class

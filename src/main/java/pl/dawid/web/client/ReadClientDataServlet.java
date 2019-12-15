@@ -20,7 +20,8 @@ public class ReadClientDataServlet extends HttpServlet {
     private DataSource ds;
 
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest req, HttpServletResponse resp)
+                    throws ServletException, IOException {
         PrintWriter pw = resp.getWriter();
         try {
             /*
@@ -58,7 +59,10 @@ te linijki przenosimy wyżej -> @Resource....
                 pw.println("</td>");
                 pw.println("</tr>");
             }
-            pw.println("</table>\n" +
+            pw.println("</table><br>\n" +
+                    "<a href=\"userForm.html\">Dodaj nastepnego klienta</a><br><br>"+
+                    "<a href=\"delete\">Usun klienta</a><br><br>"+
+                    "<a href=\"Komis\">strona startowa</a>"+
                     "</body>\n" +
                     "</html>");
         } catch (Exception e) {

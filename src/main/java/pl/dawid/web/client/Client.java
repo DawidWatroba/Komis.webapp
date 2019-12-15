@@ -10,7 +10,7 @@ public class Client {
     Client(){
     }
 
-    String getName() {
+    public String getName() {
         return name;
     }
 
@@ -18,7 +18,7 @@ public class Client {
         this.name = name;
     }
 
-    String getSurname() {
+    public String getSurname() {
         return surname;
     }
 

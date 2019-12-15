@@ -5,17 +5,20 @@
   Time: 15:45
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Silnia</title>
+    <style>
+        table, tr, th, td {border: 1px solid ;border-collapse: collapse; text-align: center}
+    </style>
 </head>
 <body>
 <% int n = 10; %>
 <% Object p = request.getParameter("n"); %>
 <% if(p!=null)n = Integer.parseInt(p.toString()); %>
 <%!
-    int silnia(int n){
+    private int silnia(int n){
         if(n<=0)return 1;
         return n*silnia(n-1);
     }

@@ -5,6 +5,8 @@
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/client/Client.java
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/client/ClientDataDAOImpl.java
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/car/Car.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/client/DeleteUserServlet.java
+/home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/client/DeleteClient.java
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/car/SaveCarsDataServlet.java
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/client/ReadClientDataServlet.java
 /home/student/IdeaProjects/Komis.webapp/src/main/java/pl/dawid/web/car/CarDataDAO.java

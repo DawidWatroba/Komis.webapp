@@ -1,4 +1,4 @@
-package pl.dawid.web;
+package pl.dawid.web.servlets;
 
 import pl.dawid.web.listeners.SessionCounter;
 
@@ -29,8 +29,8 @@ public class ControllerServlet extends HttpServlet {
             pw.println("<H3><font color=\"red\">Witaj uzytkowniku Komisu!</font></H3>");
         }
         pw.println("<a href=\"makeForm.html\">Link do wyboru marki</a><br><br>");
-        pw.println("<a href=\"userForm.html\">Rejestracja klienta</a><br><br>");
-        pw.println("<a href=\"carForm.html\">Dodaj samochod do bazy</a><br><br>");
+        pw.println("<a href=\"userForm.jsp\">Rejestracja klienta</a><br><br>");
+        pw.println("<a href=\"carInfoForm.jsp\">Dodaj samochod do bazy</a><br><br>");
         pw.println("<a href=\"delete\">Usun klienta</a><br><br>");
         pw.println("<br>");
         pw.println("<h5>Liczba aktywnych uzytkownikow: "+ SessionCounter.getCounter()+"<br><br>");

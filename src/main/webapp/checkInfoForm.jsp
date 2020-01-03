@@ -1,38 +1,47 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 15.12.2019
-  Time: 14:28
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"  %>
 <html>
 <head>
-    <title>Sprawdz dane</title>
+    <title>Sprawdź informacje</title>
     <style>
-        table, tr, th, td {border: 1px solid ;border-collapse: collapse; text-align: center}
-        h2{color: red}
+        body {text-align: center;
+            background-color: powderblue;
+            font-size: x-large
+        }
     </style>
 </head>
 <body>
-<h2>Sprawdź poprawność danych</h2>
-<h3>
-    <form action="add_car" method="post" >
-    <td>Marka:</td>
-    <td><%=request.getParameter("make")%></td><br>
-    <td>Typ:</td>
-    <td><%=request.getParameter("type")%></td><br>
-    <td>Rok produkcji:</td>
-    <td><%=request.getParameter("age")%></td><br>
-    <td>Przebieg:</td>
-    <td><%=request.getParameter("distance")%></td><br>
-    <td>Pojemność:</td>
-    <td><%=request.getParameter("capacity")%></td><br>
-</tr><br>
-        <input typ="hidden" name=""make value="">
-    <input type="submit" value="Dodaj auto">
-    </form>
-</h3>
+
+<table>
+    <tr>
+        <td>Marka</td>
+        <td><%= request.getParameter("make")%></td>
+    </tr>
+    <tr>
+        <td>Typ</td>
+        <td><%= request.getParameter("type")%></td>
+    </tr>
+    <tr>
+        <td>Rok produkcji</td>
+        <td><%= request.getParameter("production_year")%></td>
+    </tr>
+    <tr>
+        <td>Przebieg</td>
+        <td><%= request.getParameter("milage")%></td>
+    </tr>
+    <tr>
+        <td>Pojemność</td>
+        <td><%= request.getParameter("capacity")%></td>
+    </tr>
+</table>
+
+<form action="add_car">
+    <input type="hidden" name="make" value='<%= request.getParameter("make")%>'>
+    <input type="hidden" name="type" value='<%= request.getParameter("type")%>'>
+    <input type="hidden" name="year" value='<%= request.getParameter("production_year")%>'>
+    <input type="hidden" name="distance" value='<%= request.getParameter("milage")%>'>
+    <input type="hidden" name="capacity" value='<%= request.getParameter("capacity")%>'>
+    <input style="font-size: xx-large" type="submit" value="Zapisz samochód">
+</form>
 
 <footer><%@ include file="companyAdrress.html" %></footer>
 </body>

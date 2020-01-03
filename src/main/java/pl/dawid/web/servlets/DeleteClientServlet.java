@@ -1,4 +1,7 @@
-package pl.dawid.web.client;
+package pl.dawid.web.servlets;
+
+import pl.dawid.web.dao.ClientDataDAO;
+import pl.dawid.web.dao.ClientDataDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;

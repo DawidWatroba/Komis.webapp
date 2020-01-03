@@ -9,7 +9,7 @@
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
-    <title>Rejestracja użytkownika</title>
+    <title>Edycja użytkownika</title>
     <style>
         body {text-align: center;
             background-color: powderblue;
@@ -19,21 +19,23 @@
 </head>
 <body>
 <form action="add_user" method="post" >
-    Imie      : <input type="text" name="name"><br>
-    Nazwisko: <input type="text" name="surname"><br>
-    Wiek: <select name="age">
+    Imie      : <input type="text" name="name" value="<%= request.getParameter("name") %>"><br>
+    Nazwisko: <input type="text" name="surname" value="<%= request.getParameter("surname") %>"><br>
+    Wiek: <select name="age" value="<%= request.getParameter("age") %>">
     <% for(int i =1; i<=100; i++){ %>
+    <%if(i==1)%><option value="<%= request.getParameter("age") %>"><%= request.getParameter("age") %></option>
     <option value="<%= i %>"><%= i %></option>
     <% } %>
 
 </select><br>
-    Region  : <select name = "region">
+    Region  : <select name = "region" value="<%= request.getParameter("region") %>">
     <option>Polska</option>
     <option>Niemcy</option>
 </select><br>
-    Płeć   :<input type="radio" name="sex" value="MALE">mezczyzna<br>
+    Płeć   :
+    <input type="radio" name="sex" value="MALE">mezczyzna<br>
     <input type="radio" name="sex" value="FEMALE">kobieta<br><br>
-    <input style="font-size: xx-large" type="submit" value="Utwórz użytkownika">
+    <input style="font-size: xx-large" type="submit" value="Zapisz zmiany">
 </form>
 </body>
 </html>

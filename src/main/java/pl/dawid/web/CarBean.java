@@ -1,4 +1,4 @@
-package pl.dawid.web.car2;
+package pl.dawid.web;
 
 public class CarBean {
     private int id;

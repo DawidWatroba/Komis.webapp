@@ -1,4 +1,4 @@
-package pl.dawid.web;
+package pl.dawid.web.servlets;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;

@@ -1,5 +1,10 @@
-package pl.dawid.web.client;
+package pl.dawid.web.servlets;
 
+import pl.dawid.web.Client;
+import pl.dawid.web.dao.ClientDataDAO;
+import pl.dawid.web.dao.ClientDataDAOImpl;
+
+import javax.annotation.Resource;
 import javax.naming.Context;
 import javax.naming.InitialContext;
 import javax.servlet.ServletException;
@@ -10,9 +15,11 @@ import javax.servlet.http.HttpServletResponse;
 import javax.sql.DataSource;
 import java.io.IOException;
 import java.io.PrintWriter;
+
 @WebServlet(urlPatterns = "/add_user")
 public class SaveClientDataServlet extends HttpServlet {
-    Client client = new Client();
+    @Resource(name = "jdbc:komis")
+    private DataSource ds;
 
     @Override
     protected void doPost(HttpServletRequest req,
@@ -26,30 +33,13 @@ public class SaveClientDataServlet extends HttpServlet {
 
         ClientDataDAO dao = new ClientDataDAOImpl();
         try {
-            InitialContext initCtx = new InitialContext();
-            Context context = (Context) initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource) context.lookup(getServletContext()
-                    .getInitParameter("dataSource"));
             dao.saveClientData(client, ds);
-            //podpunkt g :
+            //podpunkt g
             req.setAttribute("bla bla", client);
+            req.getRequestDispatcher("add_new_client_successfully.jsp").forward(req, resp);
+
         } catch (Exception e) {
             e.printStackTrace();
         }
-        PrintWriter pw = resp.getWriter();
-        pw.println("<HTML><HEAD>");
-        pw.println("<meta charset=\"UTF-8\">");
-        pw.println("<TITLE>Brawo!</TITLE>");
-        pw.println("</HEAD><BODY><font color=\"red\"><font size=\"6\">" +
-                "<center>Udalo Ci sie dodac uzytkownika!" +
-                "</font></center></font><br><br>");
-        pw.println("<center><font size=\"5\">" +
-                "<a href=\"userForm.html\">Dodaj nastepnego klienta<?a>" +
-                "</font></center><br><br>");
-        pw.println("<center><font size=\"5\">" +
-                "<a href=\"read_users\">pokaz klientow<?a>" +
-                "</font></center><br><br>");
-        pw.println("<H3></H3>");
-        pw.println("</BODY></HTML>");
     }
 }

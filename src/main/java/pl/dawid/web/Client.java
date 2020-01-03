@@ -1,20 +1,29 @@
-package pl.dawid.web.client;
+package pl.dawid.web;
 
 public class Client {
+    private int id;
     private String name;
     private String surname;
     private int age;
     private String region;
     private String sex;
 
-    Client(){
+    public Client(){
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    void setName(String name) {
+    public void setName(String name) {
         this.name = name;
     }
 
@@ -22,31 +31,31 @@ public class Client {
         return surname;
     }
 
-    void setSurname(String surname) {
+    public void setSurname(String surname) {
         this.surname = surname;
     }
 
-    int getAge() {
+    public int getAge() {
         return age;
     }
 
-    void setAge(int age) {
+    public void setAge(int age) {
         this.age = age;
     }
 
-    String getRegion() {
+    public String getRegion() {
         return region;
     }
 
-    void setRegion(String region) {
+    public void setRegion(String region) {
         this.region = region;
     }
 
-    String getSex() {
+    public String getSex() {
         return sex;
     }
 
-    void setSex(String sex) {
+    public void setSex(String sex) {
         this.sex = sex;
     }
 }

@@ -10,38 +10,46 @@
     </style>
 </head>
 <body>
+<jsp:useBean id="car" class="pl.dawid.web.CarBean" scope="session"/>
+<%--<jsp:setProperty name="car" property="make"/>--%>
+<%--<jsp:setProperty name="car" property="type"/>--%>
+<%--<jsp:setProperty name="car" property="year" param="production_year"/>--%>
+<%--<jsp:setProperty name="car" property="distance" param="milage"/>--%>
+<%--<jsp:setProperty name="car" property="capacity" />--%>
+
+<jsp:setProperty name="car" property="*"/>
 
 <table>
     <tr>
         <td>Marka</td>
-        <td><%= request.getParameter("make")%></td>
+        <td><jsp:getProperty name="car" property="make"/></td>
     </tr>
     <tr>
         <td>Typ</td>
-        <td><%= request.getParameter("type")%></td>
+        <td><jsp:getProperty name="car" property="type"/></td>
     </tr>
     <tr>
         <td>Rok produkcji</td>
-        <td><%= request.getParameter("production_year")%></td>
+        <td><jsp:getProperty name="car" property="year"/></td>
     </tr>
     <tr>
         <td>Przebieg</td>
-        <td><%= request.getParameter("milage")%></td>
+        <td><jsp:getProperty name="car" property="distance"/></td>
     </tr>
     <tr>
         <td>Pojemność</td>
-        <td><%= request.getParameter("capacity")%></td>
+        <td><jsp:getProperty name="car" property="capacity"/></td>
     </tr>
 </table>
 
+<form action="carInfoForm.jsp">
+    <input style="font-size: x-large" type="submit" value="Edytuj samochód">
+</form>
+
 <form action="add_car">
-    <input type="hidden" name="make" value='<%= request.getParameter("make")%>'>
-    <input type="hidden" name="type" value='<%= request.getParameter("type")%>'>
-    <input type="hidden" name="year" value='<%= request.getParameter("production_year")%>'>
-    <input type="hidden" name="distance" value='<%= request.getParameter("milage")%>'>
-    <input type="hidden" name="capacity" value='<%= request.getParameter("capacity")%>'>
     <input style="font-size: xx-large" type="submit" value="Zapisz samochód">
 </form>
+
 
 <footer><%@ include file="companyAdrress.html" %></footer>
 </body>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="pl.dawid.web.listeners.SessionCounter" %><%--
   Created by IntelliJ IDEA.
   User: ja
   Date: 03.01.2020
@@ -21,6 +21,7 @@
         a:visited {text-decoration: none}
         a:active {text-decoration: none}
         a:hover {text-decoration: underline}
+        h5 {}
     </style>
 </head>
 <body>
@@ -37,8 +38,15 @@
 <br><br>
 <a href="userForm.jsp">Rejestracja klienta</a>
 <br><br>
+<a href="read_users">Pokaż klientów</a>
+<br><br>
 <a href="carInfoForm.jsp">Dodaj samochód do bazy</a>
 <br><br>
 <a href="delete">Usuń klienta</a>
+<h5>
+    <br><br>
+    Liczba aktywnych uzytkownikow : <%=SessionCounter.getCounter()%>
+    <br><br>
+</h5>
 </body>
 </html>

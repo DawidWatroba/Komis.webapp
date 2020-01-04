@@ -26,12 +26,8 @@ public class FindCarById extends HttpServlet {
         int carId = Integer.parseInt(req.getParameter("car_id"));
         CarInfoDAO carDAO = new CarInfoDAOImpl();
         CarBean car = carDAO.findCarById(carId, dataSource);
+        req.getSession().setAttribute("auto",car);
+        req.getRequestDispatcher("carInfoForm.jsp").forward(req,resp);
     }
 }
-// dokończyć tą metodę
-// dokończyć carinfoDAOimpl
 
-/* pożniej sprobować nadpisywac edytowany element a nie dodawać kolejny -
-    skorzysac z opcji ze id nowego auta jest zero,
-    a id edytowanego jest wieksze od zera(ma juz przydzielone wcześniej)
- */

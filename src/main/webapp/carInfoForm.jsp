@@ -23,7 +23,7 @@
 
 <%-- <%! private String[] makes =
                     {"Alfa Romeo","Fiat", "Audi", "BMW", "Mercedes", "Renault", "Volvo"}; %> --%>
-<c:set var="makes" value="Fiat,Volkswagen,Ford,Volvo,Honda,Citroen"/>
+<c:set var="makes" value="Alfa Romeo,Audi,BMW,Citroen,Ford,Fiat,Honda,Mercedes,Volkswagen,Volvo"/>
 
 <form action="checkInfoForm.jsp" method="post">
     <% CarBean car1 = (CarBean) session.getAttribute("auto"); %>
@@ -53,23 +53,8 @@
                     </c:if>
             >
                 <c:out value="${currentYear - i}"/></option>
-            <%-- inne roziwazanie --%>
-            <%--            <c:choose>--%>
-            <%--                <c:when test="${currentYear - i == autko.year}">--%>
-            <%--                    <option selected="selected"><c:out value="${currentYear - i}"/></option>--%>
-            <%--                </c:when>--%>
-            <%--                <c:otherwise>--%>
-            <%--                    <option><c:out value="${currentYear - i}"/></option>--%>
-            <%--                </c:otherwise>--%>
-            <%--            </c:choose>--%>
         </c:forEach>
-        <%--        <%for (int i = 2019; i >= 1980; i--) { %>--%>
-        <%--            <% if (car.getYear() == i) { %>--%>
-        <%--                <option selected="selected"><%=i%></option>--%>
-        <%--            <% } else { %>--%>
-        <%--                <option><%=i%></option>--%>
-        <%--            <% } %>--%>
-        <%--        <% } %>--%>
+
     </select><br>
     Przebieg:<select name="distance">
     <c:forEach var="i" begin="0" end="500000" step="10000">

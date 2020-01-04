@@ -25,7 +25,7 @@ public class SaveCarInfoServlet extends HttpServlet {
 
         // logika zapisywania auta
 
-        CarBean car = (CarBean) req.getSession().getAttribute("car");
+        CarBean car = (CarBean) req.getSession().getAttribute("auto");
 
         CarInfoDAO dao = new CarInfoDAOImpl();
         dao.saveCarInfo(car, dataSource);

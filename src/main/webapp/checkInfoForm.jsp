@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8"  %>
 <html>
 <head>
@@ -7,6 +8,20 @@
             background-color: powderblue;
             font-size: x-large
         }
+        table{
+            font-size: large;
+            text-align: center;
+            border: 1px solid black;
+        }
+        th,td{
+            padding: 5px 10px;
+            border-bottom: 1px solid black;
+            font-size: large;
+            text-align: center;}
+        form{
+            padding: 1px;
+            font-size: medium;
+            text-align: center;}
     </style>
 </head>
 <body>
@@ -22,23 +37,23 @@
 <table>
     <tr>
         <td>Marka</td>
-        <td><jsp:getProperty name="auto" property="make"/></td>
+        <td><c:out value="${auto.make}" /></td>
     </tr>
     <tr>
         <td>Typ</td>
-        <td><jsp:getProperty name="auto" property="type"/></td>
+        <td><c:out value="${auto.type}"/></td>
     </tr>
     <tr>
         <td>Rok produkcji</td>
-        <td><jsp:getProperty name="auto" property="year"/></td>
+        <td><c:out value="${auto.year}"/></td>
     </tr>
     <tr>
         <td>Przebieg</td>
-        <td><jsp:getProperty name="auto" property="distance"/></td>
+        <td><c:out value="${auto.distance}"/></td>
     </tr>
     <tr>
         <td>Pojemność</td>
-        <td><jsp:getProperty name="auto" property="capacity"/></td>
+        <td><c:out value="${auto.capacity}"/></td>
     </tr>
 </table>
 

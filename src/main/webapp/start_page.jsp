@@ -1,11 +1,6 @@
-<%@ page import="pl.dawid.web.listeners.SessionCounter" %><%--
-  Created by IntelliJ IDEA.
-  User: ja
-  Date: 03.01.2020
-  Time: 10:50
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="pl.dawid.web.listeners.SessionCounter" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <html>
 <head>
     <title>Komis u Dawida</title>
@@ -40,12 +35,14 @@
 <br><br>
 <a href="read_users">Pokaż klientów</a>
 <br><br>
+<a href="delete">Usuń klienta</a>
+<br><br>
 <a href="carInfoForm.jsp">Dodaj samochód do bazy</a>
 <br><br>
-<a href="delete">Usuń klienta</a>
+<a href="car_list.jsp">Pokaż listę samochodów</a>
 <h5>
     <br><br>
-    Liczba aktywnych uzytkownikow : <%=SessionCounter.getCounter()%>
+    Liczba aktywnych użytkowników : <%=SessionCounter.getCounter()%>
     <br><br>
 </h5>
 </body>

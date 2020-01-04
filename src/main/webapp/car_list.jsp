@@ -1,6 +1,6 @@
 <%@ taglib prefix="sql" uri="http://java.sun.com/jstl/sql" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8"%>
 
 <html>
 <head>
@@ -52,7 +52,8 @@
     <td> <c:out value="${item.przebieg}"/></td>
     <td><c:out value="${item.pojemnosc}"/></td>
     <td>
-        <form action="edit_car">
+        <form action="findCarById">
+            <input type="hidden" name= "car_id" value="<c:out value='${item.id}'/>">
             <input type="submit" value="Edytuj">
         </form>
     </td>

@@ -1,12 +1,8 @@
-<%@ page import="pl.dawid.web.CarBean" %><%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 15.12.2019
-  Time: 13:49
-  To change this template use File | Settings | File Templates.
---%>
-
+<%@ page import="pl.dawid.web.CarBean" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 <%@ page contentType="text/html;charset=UTF-8" %>
+
 <html lang="pl">
 <head>
     <meta charset="UTF-8">
@@ -20,67 +16,85 @@
 </head>
 <body>
 
+<jsp:useBean id="now" class="java.util.Date" />
+<fmt:formatDate var="currentYear" value="${now}" pattern="yyyy" />
 
-<jsp:useBean id="car" class="pl.dawid.web.CarBean" scope="session">
-    <% car.setMake("");%>
-    <% car.setType(""); %>
-    <% car.setYear(2019); %>
-    <% car.setDistance("0");%>
-    <% car.setCapacity("1");%>
-</jsp:useBean>
+<jsp:useBean id="auto" class="pl.dawid.web.CarBean" scope="session"/>
 
-<%! private String[] makes = {"Alfa Romeo","Fiat", "Audi", "BMW", "Mercedes", "Renault", "Volvo"}; %>
+<%-- <%! private String[] makes =
+                    {"Alfa Romeo","Fiat", "Audi", "BMW", "Mercedes", "Renault", "Volvo"}; %> --%>
+<c:set var="makes" value="Fiat,Volkswagen,Ford,Volvo,Honda,Citroen"/>
 
 <form action="checkInfoForm.jsp" method="post">
+    <% CarBean car1 = (CarBean) session.getAttribute("auto"); %>
 
-    Marka: <select name="make">
-    <% CarBean car1 = (CarBean) session.getAttribute("car"); %>
-    <% for (String s:makes) { %>
-    <% if (car1.getMake().equals(s)) { %>
-    <option selected="selected"><%=s%></option>
-    <% } else { %>
-    <option><%= s %></option>
-    <% } %>
-    <% } %>
+    Marka:
+    <select name="make">
+        <c:forEach var="m" items="${makes}">
+            <c:choose>
+                <c:when test="${m eq auto.make}">
+                    <option selected="selected"> <c:out value="${m}"/> </option>
+                </c:when>
+                <c:otherwise>
+                    <option> <c:out value="${m}"/> </option>
+                </c:otherwise>
+            </c:choose>
+        </c:forEach>
 </select><br>
 
-    Model: <input type="text" name="type" value="<jsp:getProperty name="car" property="type"/>">
-    <br>
+    Model:   <input type="text" name="type" value="<c:out value='${auto.type}'/>"/> <br>
 
     Rok Produkcji:
     <select name="year">
-        <%for (int i = 2019; i >= 1900; i--) { %>
-        <% if (car1.getYear() == i) { %>
-        <option selected="selected"><%=i%></option>
-        <% } else { %>
-        <option><%=i%></option>
-        <% } %>
-        <% } %>
+        <c:forEach var="i" begin="0" end="49">
+            <option
+                    <c:if test="${currentYear - i == auto.year}">
+                        selected="selected"
+                    </c:if>
+            >
+                <c:out value="${currentYear - i}"/></option>
+            <%-- inne roziwazanie --%>
+            <%--            <c:choose>--%>
+            <%--                <c:when test="${currentYear - i == autko.year}">--%>
+            <%--                    <option selected="selected"><c:out value="${currentYear - i}"/></option>--%>
+            <%--                </c:when>--%>
+            <%--                <c:otherwise>--%>
+            <%--                    <option><c:out value="${currentYear - i}"/></option>--%>
+            <%--                </c:otherwise>--%>
+            <%--            </c:choose>--%>
+        </c:forEach>
+        <%--        <%for (int i = 2019; i >= 1980; i--) { %>--%>
+        <%--            <% if (car.getYear() == i) { %>--%>
+        <%--                <option selected="selected"><%=i%></option>--%>
+        <%--            <% } else { %>--%>
+        <%--                <option><%=i%></option>--%>
+        <%--            <% } %>--%>
+        <%--        <% } %>--%>
     </select><br>
     Przebieg:<select name="distance">
-    <% for (int i = 0; i < 500000; i += 20000) { %>
-    <% if (Integer.parseInt(car1.getDistance())==i) { %>
-    <option selected="selected"><%=i%></option>
-    <% } else { %>
-    <option><%=i%></option>
-    <% } %>
-    <% } %>
+    <c:forEach var="i" begin="0" end="500000" step="10000">
+        <option <c:if test="${i == auto.distance}">selected="selected"</c:if>>
+            <c:out value="${i}"/>
+        </option>
+    </c:forEach>
 </select><br>
     Pojemność:
     <select name="capacity">
-        <% for (int i = 0; i < 9; i++) { %>
-        <% if (Integer.parseInt(car1.getCapacity())==i) { %>
-        <option selected="selected"><%=i%></option>
-        <% } else { %>
-        <option><%= i %></option>
-        <% } %>
-        <% } %>
+        <c:forEach var="i" begin="1" end="7">
+            <option
+                    <c:if test="${i == auto.capacity}">
+                        selected="selected"
+                    </c:if>
+            >
+                <c:out value="${i}"/></option>
+        </c:forEach>
     </select> osób<br>
     <br><br>
     <input style="font-size: xx-large" type="submit" value="Dodaj auto">
 </form>
 
 <footer>
+    <br><br><br><br><br><br><br><br><br><br>
     <%@ include file="companyAdrress.html" %>
 </footer>
 </body>

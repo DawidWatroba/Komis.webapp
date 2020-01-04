@@ -10,35 +10,35 @@
     </style>
 </head>
 <body>
-<jsp:useBean id="car" class="pl.dawid.web.CarBean" scope="session"/>
-<%--<jsp:setProperty name="car" property="make"/>--%>
-<%--<jsp:setProperty name="car" property="type"/>--%>
-<%--<jsp:setProperty name="car" property="year" param="production_year"/>--%>
-<%--<jsp:setProperty name="car" property="distance" param="milage"/>--%>
-<%--<jsp:setProperty name="car" property="capacity" />--%>
+<jsp:useBean id="auto" class="pl.dawid.web.CarBean" scope="session"/>
+<%--<jsp:setProperty name="auto" property="make"/>--%>
+<%--<jsp:setProperty name="auto" property="type"/>--%>
+<%--<jsp:setProperty name="auto" property="year" param="production_year"/>--%>
+<%--<jsp:setProperty name="auto" property="distance" param="milage"/>--%>
+<%--<jsp:setProperty name="auto" property="capacity" />--%>
 
-<jsp:setProperty name="car" property="*"/>
+<jsp:setProperty name="auto" property="*"/>
 
 <table>
     <tr>
         <td>Marka</td>
-        <td><jsp:getProperty name="car" property="make"/></td>
+        <td><jsp:getProperty name="auto" property="make"/></td>
     </tr>
     <tr>
         <td>Typ</td>
-        <td><jsp:getProperty name="car" property="type"/></td>
+        <td><jsp:getProperty name="auto" property="type"/></td>
     </tr>
     <tr>
         <td>Rok produkcji</td>
-        <td><jsp:getProperty name="car" property="year"/></td>
+        <td><jsp:getProperty name="auto" property="year"/></td>
     </tr>
     <tr>
         <td>Przebieg</td>
-        <td><jsp:getProperty name="car" property="distance"/></td>
+        <td><jsp:getProperty name="auto" property="distance"/></td>
     </tr>
     <tr>
         <td>Pojemność</td>
-        <td><jsp:getProperty name="car" property="capacity"/></td>
+        <td><jsp:getProperty name="auto" property="capacity"/></td>
     </tr>
 </table>
 

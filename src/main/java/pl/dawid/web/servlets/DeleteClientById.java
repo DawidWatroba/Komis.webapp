@@ -14,6 +14,7 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/delete_user_by_id")
 public class DeleteClientById extends HttpServlet {
+
     @Resource(name = "jdbc:komis")
     private DataSource dataSource;
     @Override

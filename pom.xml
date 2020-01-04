@@ -52,6 +52,11 @@
             <artifactId>sqlite-jdbc</artifactId>
             <version>3.28.0</version>
         </dependency>
+        <dependency>
+            <groupId>jstl</groupId>
+            <artifactId>jstl</artifactId>
+            <version>1.2</version>
+        </dependency>
 
     </dependencies>
     <build>
@@ -70,6 +75,7 @@
                         <artifactId>sqlite-jdbc</artifactId>
                         <version>3.28.0</version>
                     </dependency>
+
                 </dependencies>
             </plugin>
         </plugins>

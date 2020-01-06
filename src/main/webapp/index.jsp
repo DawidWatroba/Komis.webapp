@@ -9,19 +9,16 @@
 <html>
 <head>
     <title>Podaj imię</title>
-    <style>
-        body {text-align: center;
-            background-color: powderblue;
-        }
-        form{font-size: x-large}
-        input{font-size: x-large}
-    </style>
+    <link rel="stylesheet" href="Style.css">
+
 </head>
 <body>
-<form action="start_page.jsp" method="post" >
-    Podaj imię      : <input type="text" name="name">
+<br>
+<form style="font-size: x-large" action="start_page.jsp" method="post" >
+    Podaj imię      :
+    <input style="font-size: x-large" type="text" name="name">
     <br><br>
-    <input type="submit" value="Wejdź do komisu">
+    <input style="font-size: x-large" type="submit" value="Wejdź do komisu">
 </form>
 </body>
 </html>

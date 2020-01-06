@@ -1,6 +1,6 @@
 package pl.dawid.web;
 
-public class Client {
+public class ClientBean {
     private int id;
     private String name;
     private String surname;
@@ -8,7 +8,7 @@ public class Client {
     private String region;
     private String sex;
 
-    public Client(){
+    public ClientBean(){
     }
 
     public int getId() {

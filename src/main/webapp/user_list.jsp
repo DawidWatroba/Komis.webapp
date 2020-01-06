@@ -1,35 +1,13 @@
 <%@ page import="java.util.List" %>
-<%@ page import="pl.dawid.web.Client" %><%--
-  Created by IntelliJ IDEA.
-  User: student
-  Date: 15.12.2019
-  Time: 12:35
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="pl.dawid.web.ClientBean" %>
 <%@ page contentType="text/html;charset=UTF-8"  %>
+
 
 <html>
 <head>
     <title>Spis klientów</title>
+    <link rel="stylesheet" href="Style.css">
     <style>
-        body {
-            background-color: powderblue;
-            font-size: x-large
-        }
-        table{
-            font-size: large;
-            text-align: center;
-            border: 1px solid black;
-        }
-        th,td{
-            padding: 5px 10px;
-            border-bottom: 1px solid black;
-            font-size: large;
-            text-align: center;}
-        form{
-            padding: 1px;
-            font-size: medium;
-            text-align: center;}
         tr:hover {background-color: #f5f5f5;}
     </style>
 </head>
@@ -43,13 +21,14 @@
         <th>Wiek</th>
         <th>Region</th>
         <th>Plec</th>
-        <th>Akcja</th>
+        <th>Usuń</th>
+        <th>Edytuj</th>
     </tr>
 
     <% Object oClients = request.getAttribute("clients"); %>
     <% List clients = (List) oClients; %>
     <% for (Object o : clients) { %>
-        <% Client c = (Client)o; %>
+        <% ClientBean c = (ClientBean)o; %>
         <tr>
             <td><%= c.getId() %></td>
             <td><%= c.getName() %></td>
@@ -63,16 +42,18 @@
                     <input type="text" disabled="true" name="id" value="<%= c.getId() %>">
                     -->
                     <input type="hidden" name="id" value="<%= c.getId() %>">
-                    <input type="submit" value="Usun">
+                    <input style="font-size: medium;padding: 2px 5px;" type="submit" value="Usun">
                 </form>
-                <form action="edit_user">
+            </td>
+            <td>
+                <form action="userForm.jsp">
                     <input type="hidden" name="id" value="<%=c.getId()%>">
                     <input type="hidden" name="name" value="<%=c.getName()%>">
                     <input type="hidden" name="surname" value="<%=c.getSurname()%>">
                     <input type="hidden" name="age" value="<%=c.getAge()%>">
                     <input type="hidden" name="region" value="<%=c.getRegion()%>">
                     <input type="hidden" name="sex" value="<%=c.getSex()%>">
-                    <input type="submit" value="Edytuj">
+                    <input style="font-size: medium;padding: 2px 5px;" type="submit" value="Edytuj">
                 </form>
             </td>
         </tr>

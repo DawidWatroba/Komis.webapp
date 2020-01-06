@@ -1,6 +1,5 @@
 package pl.dawid.web.servlets;
 
-import pl.dawid.web.Client;
 import pl.dawid.web.dao.ClientDataDAO;
 import pl.dawid.web.dao.ClientDataDAOImpl;
 
@@ -20,12 +19,6 @@ public class ReadClientDataServlet extends HttpServlet {
 
     @Resource(name = "jdbc:komis")
     private DataSource ds;
-            /*
-          te linijki przenosimy wyżej -> @Resource....
-            InitialContext initCtx = new InitialContext();
-            Context context = (Context) initCtx.lookup("java:comp/env");
-            DataSource ds = (DataSource) context.lookup(getServletContext().getInitParameter("dataSource"));
-*/
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp)

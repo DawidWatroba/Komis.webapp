@@ -1,5 +1,5 @@
 <%@ page import="java.util.List" %>
-<%@ page import="pl.dawid.web.Client" %><%--
+<%@ page import="pl.dawid.web.ClientBean" %><%--
   Created by IntelliJ IDEA.
   User: student
   Date: 15.12.2019
@@ -26,7 +26,7 @@
 <form action="delete_client">
     <select style="font-size: x-large" name = "client">
         <% for (Object o : clients) { %>
-        <% Client c = (Client) o; %>
+        <% ClientBean c = (ClientBean) o; %>
         <option><%= c.getName() %> <%= c.getSurname() %></option>
         <%  } %>
     </select>

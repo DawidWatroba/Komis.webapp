@@ -8,12 +8,15 @@ C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\ReadCli
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\DeleteClientServlet.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\dao\ClientDataDAOImpl.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\SaveClientDataServlet.java
+C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\OrderBean.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\DeleteClientById.java
-C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\Client.java
+C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\ClientBean.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\dao\ClientDataDAO.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\listeners\SessionCounter.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\FindCarById.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\CarBean.java
+C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\dao\OrderDAO.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\RedirectServlet.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\servlets\DeleteClientPrepServlet.java
 C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\listeners\SavedClientListener.java
+C:\Users\ja\Programator\Komis.webapp\src\main\java\pl\dawid\web\dao\OrderDAOImpl.java

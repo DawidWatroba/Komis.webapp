@@ -4,23 +4,10 @@
 <html>
 <head>
     <title>Komis u Dawida</title>
-    <style>
-        body {text-align: center;
-            background-color: powderblue;
-            font-size: x-large
-        }
-        h1 {font-size: xx-large; color: red}
-
-        a{color: black;font-size: large;}
-        a:link {text-decoration: none}
-        a:visited {text-decoration: none}
-        a:active {text-decoration: none}
-        a:hover {text-decoration: underline}
-        h5 {}
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
-<br><br>
+<br>
 <h1>
     <% if(request.getParameter("name")!=null){%>
     <%= request.getParameter("name")%> witaj w Komisie!

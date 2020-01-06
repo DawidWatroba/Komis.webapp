@@ -1,6 +1,6 @@
 package pl.dawid.web.dao;
 
-import pl.dawid.web.Client;
+import pl.dawid.web.ClientBean;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -12,29 +12,22 @@ import javax.sql.DataSource;
 
 public class ClientDataDAOImpl implements ClientDataDAO {
 
-	public void saveClientData(Client cl, DataSource dataSource) throws Exception {
-		
-        Connection con = null;
-        
-        try {
-	        con = dataSource.getConnection();
-	        
-	        PreparedStatement pstmt = con.prepareStatement(
-	        "INSERT INTO klient(id,imie,nazwisko,region,wiek,mezczyzna) VALUES (?,?,?,?,?,?)");
-	        int m = (cl.getSex().equals("MALE") ? 1 : 0);
-	        pstmt.setInt(1, generateId());
-	        pstmt.setString(2, cl.getName());
-	        pstmt.setString(3, cl.getSurname());
-	        pstmt.setString(4, cl.getRegion());
-	        pstmt.setInt(5, cl.getAge());
-	        pstmt.setInt(6, m );
-	        
-	        pstmt.executeUpdate();
-	        pstmt.close();
-        } finally {
-        	if (con != null) {
-        		con.close();
-        	}
+	public void saveClientData(ClientBean cl, DataSource dataSource) throws Exception {
+
+        try (Connection con = dataSource.getConnection()) {
+
+            PreparedStatement pstmt = con.prepareStatement(
+                    "INSERT INTO klient(id,imie,nazwisko,region,wiek,mezczyzna) VALUES (?,?,?,?,?,?)");
+            int m = (cl.getSex().equals("MALE") ? 1 : 0);
+            pstmt.setInt(1, generateId());
+            pstmt.setString(2, cl.getName());
+            pstmt.setString(3, cl.getSurname());
+            pstmt.setString(4, cl.getRegion());
+            pstmt.setInt(5, cl.getAge());
+            pstmt.setInt(6, m);
+
+            pstmt.executeUpdate();
+            pstmt.close();
         }
 	}
 	private int generateId() {
@@ -54,7 +47,7 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 	
 	        ResultSet rs = pstmt.executeQuery();
             while (rs.next()) {
-				Client cl = new Client();
+				ClientBean cl = new ClientBean();
 				cl.setId(rs.getInt(1));
 				cl.setName(rs.getString(2));
 				cl.setSurname(rs.getString(3));
@@ -79,29 +72,17 @@ public class ClientDataDAOImpl implements ClientDataDAO {
 	}
 	@Override
 	public void removeClient(String name, String surname, DataSource dataSource) throws Exception {
-		Connection connection = null;
-		try {
-			connection = dataSource.getConnection();
-			connection.createStatement().executeUpdate("DELETE FROM klient WHERE " +
-					"imie = '" + name + "' AND nazwisko = '" + surname + "';");
-		} finally {
-			if (connection != null) {
-				connection.close();
-			}
-		}
+        try (Connection connection = dataSource.getConnection()) {
+            connection.createStatement().executeUpdate("DELETE FROM klient WHERE " +
+                    "imie = '" + name + "' AND nazwisko = '" + surname + "';");
+        }
 	}
 	@Override
 	public void removeClient(int id, DataSource dataSource) throws Exception {
-		Connection connection = null;
-		try {
-			connection = dataSource.getConnection();
-			connection.createStatement().executeUpdate("DELETE FROM klient WHERE " +
-					"id = " + id + ";");
-		} finally {
-			if (connection != null) {
-				connection.close();
-			}
-		}
+        try (Connection connection = dataSource.getConnection()) {
+            connection.createStatement().executeUpdate("DELETE FROM klient WHERE " +
+                    "id = " + id + ";");
+        }
 	}
 
 }

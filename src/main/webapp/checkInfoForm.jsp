@@ -1,28 +1,9 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8"  %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
     <title>Sprawdź informacje</title>
-    <style>
-        body {text-align: center;
-            background-color: powderblue;
-            font-size: x-large
-        }
-        table{
-            font-size: large;
-            text-align: center;
-            border: 1px solid black;
-        }
-        th,td{
-            padding: 5px 10px;
-            border-bottom: 1px solid black;
-            font-size: large;
-            text-align: center;}
-        form{
-            padding: 1px;
-            font-size: medium;
-            text-align: center;}
-    </style>
+    <link rel="stylesheet" href="Style.css">
 </head>
 <body>
 <jsp:useBean id="auto" class="pl.dawid.web.CarBean" scope="session"/>
@@ -34,10 +15,10 @@
 
 <jsp:setProperty name="auto" property="*"/>
 
-<table>
+<table style="">
     <tr>
         <td>Marka</td>
-        <td><c:out value="${auto.make}" /></td>
+        <td><c:out value="${auto.make}"/></td>
     </tr>
     <tr>
         <td>Typ</td>
@@ -56,6 +37,7 @@
         <td><c:out value="${auto.capacity}"/></td>
     </tr>
 </table>
+<br><br>
 
 <form action="carInfoForm.jsp">
     <input style="font-size: x-large" type="submit" value="Edytuj samochód">
@@ -66,6 +48,8 @@
 </form>
 
 
-<footer><%@ include file="companyAdrress.html" %></footer>
+<footer>
+    <%@ include file="companyAdrress.html" %>
+</footer>
 </body>
 </html>

@@ -6,6 +6,8 @@ import pl.dawid.web.dao.ClientDataDAOImpl;
 
 import javax.annotation.Resource;
 import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -20,8 +22,9 @@ public class SaveClientDataServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req,
-                          HttpServletResponse resp) throws ServletException, IOException {
+                          HttpServletResponse resp) {
         ClientBean client = new ClientBean();
+        client.setId(Integer.parseInt(req.getParameter("id")));
         client.setName(req.getParameter("name"));
         client.setSurname(req.getParameter("surname"));
         client.setAge(Integer.parseInt(req.getParameter("age")));
@@ -31,12 +34,13 @@ public class SaveClientDataServlet extends HttpServlet {
         ClientDataDAO dao = new ClientDataDAOImpl();
         try {
             dao.saveClientData(client, ds);
-            //podpunkt g
-            req.setAttribute("bla bla", client);
             req.getRequestDispatcher("add_new_client_successfully.jsp").forward(req, resp);
-
+            req.getSession().removeAttribute("klient");
         } catch (Exception e) {
             e.printStackTrace();
         }
+
     }
+
+
 }

@@ -1,7 +1,7 @@
 <%@ page import="java.util.List" %>
 <%@ page import="pl.dawid.web.ClientBean" %>
 <%@ page contentType="text/html;charset=UTF-8"  %>
-
+<%@ page pageEncoding="UTF-8"%>
 
 <html>
 <head>
@@ -12,7 +12,8 @@
     </style>
 </head>
 <body>
-<%@include file="header.jsp"%>
+
+śźćęą
 <table>
     <tr>
         <th>Id</th>
@@ -23,6 +24,7 @@
         <th>Plec</th>
         <th>Usuń</th>
         <th>Edytuj</th>
+        <th>Złóż zamówienie</th>
     </tr>
 
     <% Object oClients = request.getAttribute("clients"); %>
@@ -56,11 +58,22 @@
                     <input style="font-size: medium;padding: 2px 5px;" type="submit" value="Edytuj">
                 </form>
             </td>
+            <td>
+                <form action="placeOrder.jsp">
+                    <input type="hidden" name="id" value="<%=c.getId()%>">
+                    <input type="hidden" name="name" value="<%=c.getName()%>">
+                    <input type="hidden" name="surname" value="<%=c.getSurname()%>">
+                    <input type="hidden" name="age" value="<%=c.getAge()%>">
+                    <input type="hidden" name="region" value="<%=c.getRegion()%>">
+                    <input type="hidden" name="sex" value="<%=c.getSex()%>">
+                    <input style="font-size: medium;padding: 2px 5px;" type="submit" value="Złóż zamówienie">
+                </form>
+            </td>
         </tr>
     <% } %>
 </table>
 <br><br>
-<a href="userForm.jsp">Dodaj nastepnego klienta</a><br><br>
+<a href="read_users">Dodaj nastepnego klienta</a><br><br>
 <a href="delete">Usun klienta</a><br><br>
 <a href="start_page.jsp">Strona startowa</a>
 </body>

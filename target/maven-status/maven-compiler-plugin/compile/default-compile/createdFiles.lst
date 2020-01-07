@@ -18,5 +18,6 @@ pl\dawid\web\servlets\SaveClientDataServlet.class
 pl\dawid\web\servlets\DeleteClientServlet.class
 pl\dawid\web\servlets\DeleteClientById.class
 pl\dawid\web\OrderBean.class
+pl\dawid\web\servlets\SaveOrderServlet.class
 pl\dawid\web\CarBean.class
 pl\dawid\web\servlets\ControllerServlet.class

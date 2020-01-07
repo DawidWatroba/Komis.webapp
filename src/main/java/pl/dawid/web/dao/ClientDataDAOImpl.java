@@ -17,9 +17,13 @@ public class ClientDataDAOImpl implements ClientDataDAO {
         try (Connection con = dataSource.getConnection()) {
 
             PreparedStatement pstmt = con.prepareStatement(
-                    "INSERT INTO klient(id,imie,nazwisko,region,wiek,mezczyzna) VALUES (?,?,?,?,?,?)");
+                    "INSERT OR REPLACE INTO klient(id,imie,nazwisko,region,wiek,mezczyzna) VALUES (?,?,?,?,?,?)");
             int m = (cl.getSex().equals("MALE") ? 1 : 0);
+            if(cl.getId()!=0){
+				pstmt.setInt(1, cl.getId());
+			}else{
             pstmt.setInt(1, generateId());
+            }
             pstmt.setString(2, cl.getName());
             pstmt.setString(3, cl.getSurname());
             pstmt.setString(4, cl.getRegion());

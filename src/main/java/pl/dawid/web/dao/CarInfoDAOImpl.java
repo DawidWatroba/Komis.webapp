@@ -61,7 +61,7 @@ public class CarInfoDAOImpl implements CarInfoDAO {
 //				pstmt.close();
 			}
 		} catch (Exception e ) {
-			System.out.println("Błąd przy zapisie danych: " + e);
+			System.out.println("Błąd przy odczycie danych: " + e);
 		}
 		return null;
 	}

@@ -5,25 +5,8 @@
 <html>
 <head>
     <title>Samochody</title>
+    <link rel="stylesheet" href="Style.css"/>
     <style>
-        body {
-            background-color: powderblue;
-            font-size: x-large
-        }
-        table{
-            font-size: large;
-            text-align: center;
-            border: 1px solid black;
-        }
-        th,td{
-            padding: 5px 10px;
-            border-bottom: 1px solid black;
-            font-size: large;
-            text-align: center;}
-        form{
-            padding: 1px;
-            font-size: medium;
-            text-align: center;}
         tr:hover {background-color: #f5f5f5;}
     </style>
 </head>

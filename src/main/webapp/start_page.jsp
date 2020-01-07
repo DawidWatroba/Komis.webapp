@@ -27,6 +27,10 @@
 <a href="carInfoForm.jsp">Dodaj samochód do bazy</a>
 <br><br>
 <a href="car_list.jsp">Pokaż listę samochodów</a>
+<br><br>
+<a href="read_users">Złóż zamówienie</a>
+<br><br>
+<a href="order_list.jsp">Pokaż listę zamówień</a>
 <h5>
     <br><br>
     Liczba aktywnych użytkowników : <%=SessionCounter.getCounter()%>

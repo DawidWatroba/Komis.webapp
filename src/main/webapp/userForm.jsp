@@ -73,6 +73,7 @@
                 </c:choose>
             </td>
         </tr>
+        <input type="hidden" name="id" value="<c:out value='${klient.id}'/>"/>
     </table>
     <br><br>
     <input style="font-size: x-large" type="submit" value="Utwórz użytkownika">

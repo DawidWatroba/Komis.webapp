@@ -23,8 +23,6 @@ public class SaveCarInfoServlet extends HttpServlet {
     @Override
     protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
-        // logika zapisywania auta
-
         CarBean car = (CarBean) req.getSession().getAttribute("auto");
 
         CarInfoDAO dao = new CarInfoDAOImpl();

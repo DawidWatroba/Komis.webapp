@@ -10,21 +10,25 @@ import javax.sql.DataSource;
 
 public class OrderDAOImpl implements OrderDAO {
 
-	public void saveOrder(DataSource ds, OrderBean ord) {
+	public void saveOrder(DataSource ds, OrderBean order) {
 
 		try {
 			try (Connection conn = ds.getConnection()) {
-				PreparedStatement pstmt = conn.prepareStatement(
-						"INSERT INTO zamowienie(klient_id, czesc, charakt_czesci, ilosc, id) VALUES (?,?,?,?,?)");
+				try (PreparedStatement pstmt = conn.prepareStatement(
+						"INSERT OR REPLACE INTO zamowienie(klient_id, czesc, charakt_czesci, ilosc, id) VALUES (?,?,?,?,?)")) {
 
-				pstmt.setInt(1, ord.getClientId());
-				pstmt.setString(2, ord.getPart());
-				pstmt.setString(3, ord.getProfile());
-				pstmt.setInt(4, ord.getCount());
-				pstmt.setInt(5, generateId());
+					pstmt.setInt(1, order.getClientId());
+					pstmt.setString(2, order.getPart());
+					pstmt.setString(3, order.getProfile());
+					pstmt.setInt(4, order.getCount());
+					if (order.getId() == 0) {
+						pstmt.setInt(5, generateId());
+					} else {
+						pstmt.setInt(5, order.getId());
+					}
 
-				pstmt.executeUpdate();
-				pstmt.close();
+					pstmt.executeUpdate();
+				}
 			}
 		} catch (Exception e ) {
         	System.out.println("Blad przy zapisie danych: " + e);

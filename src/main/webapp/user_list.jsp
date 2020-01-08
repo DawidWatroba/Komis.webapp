@@ -73,7 +73,7 @@
     <% } %>
 </table>
 <br><br>
-<a href="read_users">Dodaj nastepnego klienta</a><br><br>
+<a href="userForm.jsp">Dodaj nastepnego klienta</a><br><br>
 <a href="delete">Usun klienta</a><br><br>
 <a href="start_page.jsp">Strona startowa</a>
 </body>

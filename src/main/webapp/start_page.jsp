@@ -9,8 +9,14 @@
 <body>
 <br>
 <h1>
-    <% if(request.getParameter("name")!=null){%>
-    <%= request.getParameter("name")%> witaj w Komisie!
+    <%! private String name; %>
+    <%
+        name = request.getParameter("name");
+        if(session.getAttribute("name") == null)
+            session.setAttribute("name", name);
+    %>
+    <% if(session.getAttribute("name")!=null){%>
+    <%= session.getAttribute("name")%> witaj w Komisie!
     <%}else {%>
         Witaj w Komisie!
     <%}%>
